@@ -3,6 +3,7 @@ body {
 }
 
 html {
+  font-family: arial;
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -37,7 +38,7 @@ html {
   padding-top: 10px;
   top: 50px;
   right: 75px;
-  height: 75%;
+  height: 80%;
   width: 20%;
   background-color: #ffffff;
   visibility: visible;
@@ -47,7 +48,18 @@ html {
 }
 
 .country {
-  font-family: arial;
-  font-size: 40px;
+  font-size: 35px;
+  padding-top: 25px;
+  padding-bottom: 45px;
   text-align: center;
+}
+
+.population {
+  padding-left: 30px;
+  font-size:  15px;
+}
+
+.music {
+  padding-left: 30px;
+  font-size:  15px;
 }

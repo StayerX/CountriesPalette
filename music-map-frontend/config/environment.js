@@ -13,7 +13,9 @@ module.exports = function(environment) {
       }
     },
     contentSecurityPolicy: {
-      'img-src': "'self' http://c.basemaps.cartocdn.com http://b.basemaps.cartocdn.com http://a.basemaps.cartocdn.com",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline' *",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' *",
     },
 
     APP: {
