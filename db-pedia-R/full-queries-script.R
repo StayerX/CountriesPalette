@@ -9,7 +9,7 @@ endpoint <- "http://dbpedia.org/sparql"
 # countries file # ToDo should replace with read from postgress in future
 file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3AlphaCode.txt"
 # countries file # ToDo should replace with read from postgress in future
-fileCOutriesDB<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesQuery.csv"
+fileCoutriesDB<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesQuery.csv"
 # DB
 countries<-read.csv(file,sep="\t",header=FALSE)
 dimnames(countries)[[2]]<-list("code","name")
@@ -71,15 +71,15 @@ if(renew){
   ?country rdf:type umbel-rc:Country.
   ?country dbp:capital ?capital.
   MINUS { ?country dbp:yearEnd ?end }.       
-  FILTER(LANG(?country_name) = "" || LANGMATCHES(LANG(?country_name), "en"))
+  FILTER(!isLiteral(?country_name) || LANGMATCHES(LANG(?country_name), "en"))
   }'
   
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
   qd <- SPARQL(endpoint,query)
   df <- qd$results
-  write.csv(file=fileCOutriesDB,df,row.names = FALSE)
+  write.csv(file=fileCoutriesDB,df,row.names = FALSE)
 }else{
-  df<-read.csv(file=fileCOutriesDB)
+  df<-read.csv(file=fileCoutriesDB)
 }
 clearName<-function(name){
   #name<-"\"Ã.land Islands\"@en"
@@ -108,8 +108,8 @@ for( countryID in 1:dim(countries)[[1]]){
   if(countries$matching_id[countryID]==0){next;}
   # create query statement
   query <-paste("
-select ?country, ?capital, ?largestCity, ?pop, ?band
-where {
+                select ?country, ?capital, ?largestCity, ?pop, ?band
+                where {
                 ?country rdf:type umbel-rc:Country.
                 ?country dbp:capital ?capital.
                 ?country dbp:largestCity ?largestCity.
@@ -118,7 +118,7 @@ where {
                 ?band rdf:type <http://schema.org/MusicGroup>.
                 ?band dbo:hometown ?capital.
                 VALUES ?country {",df$country[countries$matching_id[countryID]],"}. 
-} ORDER BY DESC(xsd:Integer(?pop))
+                } ORDER BY DESC(xsd:Integer(?pop))
                 LIMIT 100"  ,sep="")
   cat(query)
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
@@ -127,6 +127,55 @@ where {
   if(length(dfmusic)==0){next;}
   
   
-  
+  for( bandID in 1:dim(dfmusic)[[1]]){#new
+    if(countries$matching_id[countryID]==0){next;}
+    # create query statement
+    query <-paste("
+                  select ?property ?value
+                  where {
+                  ?band  ?property ?value.
+                  VALUES ?property { dbo:abstract dbo:genre dbp:name dbp:currentMembers dbp:website dbo:associatedBand dbo:hometown  }.
+                  VALUES ?band {",dfmusic[bandID,5] ,"}.
+                  FILTER(!isLiteral(?value) || LANGMATCHES(LANG(?value), \"en\"))
+                  }
+                  #LIMIT 100"  ,sep="")
+    cat(query)
+    # Step 2 - Use SPARQL package to submit query and save results to a data frame
+    qd <- SPARQL(endpoint,query)
+    dfinfo <- qd$results
+    if(length(dfinfo)==0){next;}
+    keysInfo <- unique(dfinfo$property)
+    cleanURL<-function(x) gsub(">", "", basename(x))
+    keysInfoClean<-unlist(lapply(keysInfo,cleanURL))
+    for(keyID in 1:length((keysInfo))){
+      #needs cleanup
+      result[] <-toString(dfinfo$value[dfinfo$property==keysInfo[keyID]])
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#}
+#df[df$code==code,names(fields)]<-extracted_vals
+#}else{
+#  # Do Nothing
+#}
+#}
+
+## Remove old Data Table
+#if(dbExistsTable(con,tableName)) {dbRemoveTable(con,tableName)}
+## Finally write a new table:
+#dbWriteTable(con,tableName, df)
+
 
