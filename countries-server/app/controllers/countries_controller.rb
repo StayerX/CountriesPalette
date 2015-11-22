@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
   respond_to :json
 
   def index
-    @countries = Country.all
+    @countries = Country.find_with_join
     render json: @countries, each_serializer: CountrySerializer
   end
 

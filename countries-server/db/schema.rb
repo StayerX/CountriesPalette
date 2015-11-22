@@ -23,4 +23,16 @@ ActiveRecord::Schema.define(version: 20151122022444) do
     t.decimal "latitude"
   end
 
+  create_table "country_datas", id: false, force: :cascade do |t|
+    t.text "row.names"
+    t.text "code"
+    t.text "name"
+    t.text "population"
+    t.text "gni"
+    t.text "life_expectancy"
+    t.text "dying_under_five"
+    t.text "dying_between_sixty"
+    t.text "expenditure_per_capita"
+    t.text "expenditure_as_gdp"
+  end
 end

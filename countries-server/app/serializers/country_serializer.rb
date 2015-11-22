@@ -3,5 +3,7 @@ class CountrySerializer < ActiveModel::Serializer
              :name,
              :longitude,
              :latitude,
-             :two_char_code
+             :two_char_code,
+             :code,
+             :population
 end

@@ -5,6 +5,8 @@ export default DS.Model.extend({
   longitude: DS.attr('number'),
   latitude: DS.attr('number'),
   twoCharCode: DS.attr('string'),
+  code: DS.attr('string'),
+  population: DS.attr('number'),
 
   location: Ember.computed('longitude', 'latitude', function() {
     var lng = this.get('longitude') || 37.09024;

@@ -1677,3 +1677,534 @@ Started GET "/countries" for ::1 at 2015-11-21 23:36:55 -0600
 Processing by CountriesController#index as HTML
   [1m[35mCountry Load (0.5ms)[0m  SELECT "countries".* FROM "countries"
 Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 00:41:12 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.7ms)[0m  [1mSELECT "countries".* FROM "countries"[0m
+Completed 200 OK in 34ms (Views: 27.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/countries?latitude=37.09024&longitude=-95.712891" for ::1 at 2015-11-22 00:42:46 -0600
+Processing by CountriesController#index as HTML
+  Parameters: {"latitude"=>"37.09024", "longitude"=>"-95.712891"}
+  [1m[35mCountryData Load (0.9ms)[0m  SELECT "country_data".* FROM "country_data"
+PG::UndefinedTable: ERROR:  relation "country_data" does not exist
+LINE 1: SELECT "country_data".* FROM "country_data"
+                                     ^
+: SELECT "country_data".* FROM "country_data"
+Completed 500 Internal Server Error in 20044ms (ActiveRecord: 0.9ms)
+
+SystemExit (exit):
+  app/controllers/countries_controller.rb:6:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (134.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (33.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (227.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (62.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (130.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 00:43:07 -0600
+Processing by CountriesController#index as HTML
+Completed 500 Internal Server Error in 2857ms (ActiveRecord: 0.0ms)
+
+SystemExit (exit):
+  app/controllers/countries_controller.rb:6:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (131.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (38.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (222.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'countries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'country_datas'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/countries" for ::1 at 2015-11-22 00:43:45 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.9ms)[0m  SELECT "countries".* FROM "countries"
+Completed 200 OK in 80018ms (Views: 36.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 00:45:14 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountryDatas Load (0.9ms)[0m  [1mSELECT "country_datas".* FROM "country_datas"[0m
+  [1m[35mCountry Load (0.7ms)[0m  SELECT "countries".* FROM "countries"
+Completed 200 OK in 210852ms (Views: 26.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 00:48:50 -0600
+Processing by CountriesController#index as HTML
+Completed   in 850480ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:03:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.6ms)[0m  SELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)
+Completed 404 Not Found in 19ms (ActiveRecord: 3.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find all Countries with 'id': (all, {:joins=>"left join country_datas on country_datas.name = country.name"}) (found 0 results, but was looking for 2)):
+  app/models/country.rb:3:in `find_with_join'
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (78.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:03:44 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 6ms (ActiveRecord: 2.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find all Countries with 'id': (all, {:joins=>"left join country_datas on country_datas.name = country.name"}) (found 0 results, but was looking for 2)):
+  app/models/country.rb:3:in `find_with_join'
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (67.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:04:09 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.3ms)[0m  SELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)[0m
+  [1m[35mCountry Load (1.2ms)[0m  SELECT "countries".* FROM "countries" left join country_datas on country_datas.name = country.name
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "country"
+LINE 1: ..." left join country_datas on country_datas.name = country.na...
+                                                             ^
+: SELECT "countries".* FROM "countries" left join country_datas on country_datas.name = country.name
+  [1m[36mCountry Load (0.9ms)[0m  [1mSELECT  "countries".* FROM "countries" left join country_datas on country_datas.name = country.name  ORDER BY "countries"."id" ASC LIMIT 1[0m
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "country"
+LINE 1: ..." left join country_datas on country_datas.name = country.na...
+                                                             ^
+: SELECT  "countries".* FROM "countries" left join country_datas on country_datas.name = country.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[35mCountry Load (1.7ms)[0m  SELECT "countries".* FROM "countries" left join country_datas on country_datas.name = countries.name
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 113358ms (ActiveRecord: 6.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find all Countries with 'id': (all, {:joins=>"left join country_datas on country_datas.name = country.name"}) (found 0 results, but was looking for 2)):
+  app/models/country.rb:4:in `find_with_join'
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (78.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:06:18 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.3ms)[0m  SELECT "countries".* FROM "countries" WHERE "countries"."id" IN (NULL, NULL)
+Completed 404 Not Found in 6ms (ActiveRecord: 2.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find all Countries with 'id': (all, {:joins=>"left join country_datas on country_datas.name = countries.name"}) (found 0 results, but was looking for 2)):
+  app/models/country.rb:3:in `find_with_join'
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (70.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:06:33 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.1ms)[0m  [1mSELECT "countries".* FROM "countries" left join country_datas on country_datas.name = countries.name[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.7ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d5b6cba60>):
+  app/controllers/countries_controller.rb:6:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (69.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:06:59 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.7ms)[0m  SELECT  "countries".* FROM "countries" left join country_datas on country_datas.name = countries.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Load (1.2ms)[0m  [1mSELECT "countries".* FROM "countries" left join country_datas on country_datas.name = countries.name[0m
+Completed 500 Internal Server Error in 12926ms (ActiveRecord: 4.4ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d59c911e0>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (73.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:07:29 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.0ms)[0m  SELECT  "countries".* FROM "countries" right join country_datas on country_datas.name = countries.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Load (1.1ms)[0m  [1mSELECT "countries".* FROM "countries" right join country_datas on country_datas.name = countries.name[0m
+Completed 500 Internal Server Error in 11784ms (ActiveRecord: 4.3ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d593f0fb8>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (77.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:07:55 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.8ms)[0m  SELECT  "countries".* FROM "countries" full join country_datas on country_datas.name = countries.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Load (1.1ms)[0m  [1mSELECT "countries".* FROM "countries" full join country_datas on country_datas.name = countries.name[0m
+Completed 500 Internal Server Error in 18478ms (ActiveRecord: 4.2ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d5ee01728>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (73.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:08:22 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.6ms)[0m  SELECT  "countries".* FROM "countries" join country_datas on country_datas.name = countries.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Load (1.2ms)[0m  [1mSELECT "countries".* FROM "countries" join country_datas on country_datas.name = countries.name[0m
+Completed 500 Internal Server Error in 46363ms (ActiveRecord: 4.0ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d6106a3c8>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:09:10 -0600
+Processing by CountriesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Country::CountryData):
+  app/models/country.rb:3:in `find_with_join'
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (75.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:09:41 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.6ms)[0m  SELECT  "countries".* FROM "countries" join country_datas on countries.name = country_datas.name  ORDER BY "countries"."id" ASC LIMIT 1
+  [1m[36mCountry Load (1.1ms)[0m  [1mSELECT "countries".* FROM "countries" join country_datas on countries.name = country_datas.name[0m
+Completed 500 Internal Server Error in 14008ms (ActiveRecord: 4.0ms)
+
+NoMethodError (undefined method `code' for #<Country:0x007f9d610f0068>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.8ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (33.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (80.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:10:56 -0600
+Processing by CountriesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant CountriesController::CountryData):
+  app/controllers/countries_controller.rb:5:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.9ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (71.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:11:04 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountryDatas Load (0.6ms)[0m  SELECT  "country_datas".* FROM "country_datas" join countries on countries.name = country_datas.name LIMIT 1
+  [1m[36mCountryDatas Load (1.2ms)[0m  [1mSELECT "country_datas".* FROM "country_datas" join countries on countries.name = country_datas.name[0m
+Completed 500 Internal Server Error in 27424ms (ActiveRecord: 4.2ms)
+
+NoMethodError (undefined method `longitude' for #<CountryDatas:0x007f9d610b1ef8>):
+  app/controllers/countries_controller.rb:7:in `index'
+
+
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/smeriwether/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (74.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:12:39 -0600
+Processing by CountriesController#index as HTML
+  [1m[35m (1.4ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 15503ms (Views: 21.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:13:23 -0600
+Processing by CountriesController#index as HTML
+  [1m[36m (1.8ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:13:31 -0600
+Processing by CountriesController#index as HTML
+  [1m[35m (1.2ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:15:01 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:15:07 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (2.0ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:15:41 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 39ms (Views: 26.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:16:33 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.7ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:16:45 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (2.0ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 55ms (Views: 47.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:16:47 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.4ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:18:07 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:19:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 39ms (Views: 33.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:19:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:19:37 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.7ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 40ms (Views: 35.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:19:59 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.6ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:23:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.7ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:23:16 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:29:48 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries left join country_datas on countries.name = country_datas.name
+Completed 200 OK in 40ms (Views: 32.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 01:29:55 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries left join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 52ms (Views: 46.0ms | ActiveRecord: 1.4ms)

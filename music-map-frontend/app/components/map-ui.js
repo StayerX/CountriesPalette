@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   lat: 37.09024,
   lng: -95.712891,
   zoom: 4,
-  sideBarCountry: "United States",
+  sideBarCountry: null,
   countries: Ember.computed.alias('countryManager.countries'),
 
   actions: {
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
       countries.forEach(function(country) {
         var cnt = country._data
         if (cnt.latitude === lng && cnt.longitude === lat) {
-          _this.set('sideBarCountry', cnt.name);
+          _this.set('sideBarCountry', cnt);
         }
       });
     },
