@@ -7,6 +7,8 @@ html {
   height: 100%;
   margin: 0px;
   padding: 0px;
+  font-family: arial;
+  background: rgba(205, 210, 212, 1.0);
 }
 
 .ember-view {
@@ -35,7 +37,7 @@ html {
 }
 
 .side-bar {
-  padding-top: 10px;
+  padding: 10px;
   top: 50px;
   right: 75px;
   height: 80%;
@@ -47,10 +49,22 @@ html {
   background: rgba(255, 255, 255, 0.6);
 }
 
+.country-info,
+.twitter-info,
+.music-info {
+  padding-top: 20px;
+  height: 27%;
+}
+
+.country-info,
+.twitter-info {
+  border-bottom: 1px solid;
+}
+
 .country {
-  font-size: 35px;
   padding-top: 25px;
-  padding-bottom: 45px;
+  padding-bottom: 20px;
+  font-size: 35px;
   text-align: center;
 }
 

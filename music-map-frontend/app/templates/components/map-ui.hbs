@@ -1,7 +1,10 @@
 {{#leaflet-map lat=lat lng=lng zoom=zoom}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-  {{#marker-layer location=emberConfLocation}}{{/marker-layer}}
+  {{#each country in countries}}
+    {{#marker-layer location=country.location onClick='setSideBarInfo'}}{{/marker-layer}}
+  {{/each}}
 {{/leaflet-map}}
 
-{{side-bar country="United States of America" population=9999999999 artist="Bob Joe" song="Random Song" expectancy=80 deathrate=0.5 capita=55860}}
+{{side-bar countryName=sideBarCountry.name population=sideBarCountry.population artist="Bob Joe" song="Random Song" expectancy=80 deathrate=0.5 capita=55860}}
+
 
