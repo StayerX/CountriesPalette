@@ -64,7 +64,7 @@ df[,1:2]<-countries
 for (code in countries$code){
   url<-paste("http://www.who.int/countries/",tolower(code),"/en/" ,sep="")
   validPage<-TRUE
-  tryCatch(thepage <- readLines(url), warning = function(w) validPage<-FALSE,  error = function(e) validPage<-FALSE , finally = NULL)
+  tryCatch(thepage <- readLines(url), warning = function(w) {validPage<<-FALSE},  error = function(e) {validPage<<-FALSE} , finally = NULL)
   extracted_vals<-list()
   if(validPage){
     extracted_vals<-NULL
