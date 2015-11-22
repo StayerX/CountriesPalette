@@ -75,7 +75,12 @@ if(renew){
   }'
   
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
-  qd <- SPARQL(endpoint,query)
+  #qd <- SPARQL(endpoint,query)
+  validQuery<-TRUE
+  tryCatch(qd <- SPARQL(endpoint,query), warning = function(w) {validQuery<<-FALSE},  error = function(e) {validQuery<<-FALSE} , finally = NULL)
+  
+  if(!validQuery){next;}
+  
   df <- qd$results
   write.csv(file=fileCoutriesDB,df,row.names = FALSE)
 }else{
@@ -104,9 +109,12 @@ for( country in countries$name_cleaned){
 
 
 # Music -------------------------------------------------------------------
-result <- data.frame(matrix(vector(),dim(countries)[1],0),
-                        stringsAsFactors=F)
-result$coutries<-countries$name
+
+finalQuery<-"dbo:abstract dbo:genre dbp:name dbp:currentMembers dbp:website dbo:associatedBand dbo:hometown"
+result <- data.frame(matrix(vector(),1,1+length(strsplit(finalQuery, split=" ")[[1]])),
+                     stringsAsFactors=F)
+dimnames(result)[[2]]<-unlist(c("countries",strsplit(gsub("db.:", "", finalQuery), split=" ")))
+#result$coutries<-countries$name
 for( countryID in 1:dim(countries)[[1]]){
   if(countries$matching_id[countryID]==0){next;}
   # create query statement
@@ -141,25 +149,37 @@ for( countryID in 1:dim(countries)[[1]]){
                   select ?property ?value
                   where {
                   ?band  ?property ?value.
-                  VALUES ?property { dbo:abstract dbo:genre dbp:name dbp:currentMembers dbp:website dbo:associatedBand dbo:hometown  }.
+                  VALUES ?property {",finalQuery,"}.
                   VALUES ?band {",dfmusic[bandID,5] ,"}.
                   FILTER(!isLiteral(?value) || LANGMATCHES(LANG(?value), \"en\"))
                   }
                   #LIMIT 100"  ,sep="")
     #cat(query)
     # Step 2 - Use SPARQL package to submit query and save results to a data frame
-    qd <- SPARQL(endpoint,query)
+    #qd <- SPARQL(endpoint,query)
+    validQuery<-TRUE
+    tryCatch(qd <- SPARQL(endpoint,query), warning = function(w) {validQuery<<-FALSE},  error = function(e) {validQuery<<-FALSE} , finally = NULL)
+    if(!validQuery){next;}
+    
     dfinfo <- qd$results
     if(length(dfinfo)==0){next;}
     keysInfo <- unique(dfinfo$property)
     cleanURL<-function(x) gsub(">", "", basename(x))
     keysInfoClean<-unlist(lapply(keysInfo,cleanURL))
+    temp <- data.frame(matrix(vector(),0,length(keysInfoClean)),
+                     stringsAsFactors=F)
+    names(temp) <- keysInfoClean
     for(keyID in 1:length((keysInfo))){
       #needs cleanup
       valuesCombined<-toString(dfinfo$value[dfinfo$property==keysInfo[keyID]])
       if(keysInfoClean[keyID]=="name") valuesCombined<-clearName(valuesCombined)
-      result[result$coutries==countries[countryID,]$name,keysInfoClean[keyID]] <-valuesCombined
+      #Need to store the multiple values separately
+      temp[1,keysInfoClean[keyID]] <- valuesCombined
     }
+    temp$countries <- countries[countryID,]$name
+    #result[result$coutries==countries[countryID,]$name,keysInfoClean[keyID]] <-valuesCombined
+    
+    result[dim(result)[[1]]+1,names(temp)] <- temp
   }
 }
 
