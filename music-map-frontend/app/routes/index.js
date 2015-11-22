@@ -14,8 +14,8 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    sideBar: function(data) {
+    sideBar: function() {
       this.render({controller: 'side-bar'});
     }
   }
-})
+});

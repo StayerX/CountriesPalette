@@ -16,7 +16,7 @@ export default Ember.Component.extend({
       var countries = this.get('countryManager.countries').get('content');
       var _this = this;
       countries.forEach(function(country) {
-        var cnt = country._data
+        var cnt = country._data;
         if (cnt.latitude === lng && cnt.longitude === lat) {
           _this.set('sideBarCountry', cnt);
         }
