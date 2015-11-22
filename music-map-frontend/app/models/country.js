@@ -11,10 +11,4 @@ export default DS.Model.extend({
   lifeExpectancy: DS.attr('number'),
   dyingBetweenSixty: DS.attr('number'),
   expenditureAsGdp: DS.attr('number'),
-
-  location: Ember.computed('longitude', 'latitude', function() {
-    var lng = this.get('longitude') || 37.09024;
-    var lat = this.get('latitude') || -95.712891;
-    return [lng, lat];
-  }),
 });

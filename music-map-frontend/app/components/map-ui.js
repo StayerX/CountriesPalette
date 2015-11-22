@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import LeafLet from 'ember-leaflet/components/leaflet-map';
 
 export default Ember.Component.extend({
   countryManager: Ember.inject.service(),
@@ -12,6 +11,33 @@ export default Ember.Component.extend({
   sideBarCountry: null,
   countries: Ember.computed.alias('countryManager.countries'),
   searchText: null,
+  map: null,
+  markers: null,
+
+  didInsertElement() {
+    var map = L.map('leaflet', {
+      center: [this.get('lat'), this.get('lng')],
+      zoom: this.get('zoom')
+    });
+
+    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      maxZoom: this.get('maxZoom'),
+      minZoom: this.get('minZoom')
+    }).addTo(map);
+
+    var _this = this;
+    var countries = this.get('countries');
+    countries.forEach(function(country) {
+      var lng = country.get('longitude') || 37.09024;
+      var lat = country.get('latitude') || -95.712891;
+      var marker = L.marker([lng, lat]).addTo(map);
+      marker.addEventListener('click', function(e) {
+        _this.send('setSideBarInfo', e);
+      });
+    });
+
+    this.set('map', map);
+  },
 
   actions: {
     setSideBarInfo(data) {
@@ -37,6 +63,8 @@ export default Ember.Component.extend({
           _this.set('lng', cnt.latitude);
           _this.set('lat', cnt.longitude);
           _this.set('sideBarCountry', cnt);
+          var map = _this.get('map');
+          map.panTo(new L.LatLng(cnt.longitude, cnt.latitude));
         }
       });
       _this.set('searchText', null);

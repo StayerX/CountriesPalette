@@ -4471,3 +4471,513 @@ Started GET "/countries" for ::1 at 2015-11-22 10:00:43 -0600
 Processing by CountriesController#index as HTML
   [1m[35mCountry Load (1.5ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
 Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:07:58 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.2ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:08:56 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (3.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 47ms (Views: 38.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:09:12 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 41ms (Views: 35.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:09:24 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.2ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:09:44 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.2ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:09:58 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:21 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.5ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 41ms (Views: 31.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.4ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 36ms (Views: 27.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:31 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 37ms (Views: 28.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:33 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 43ms (Views: 35.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:42 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (2.1ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:11:51 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.7ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:12:11 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 48ms (Views: 38.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:13:21 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:13:31 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:13:41 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 44ms (Views: 36.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:19:12 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.2ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:21:13 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 53ms (Views: 45.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:21:16 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:21:19 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:21:21 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:23:03 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 45ms (Views: 38.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:23:37 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 48ms (Views: 40.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:23:42 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (3.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 48ms (Views: 38.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:24:32 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 50ms (Views: 42.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:24:50 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 31ms (Views: 25.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:25:14 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:25:16 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:26:22 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:27:59 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.5ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 32ms (Views: 26.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:28:09 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.5ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:28:14 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 39ms (Views: 31.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:28:18 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:28:50 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.7ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 38ms (Views: 31.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:29:16 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:29:40 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 50ms (Views: 42.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:29:43 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 47ms (Views: 39.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:30:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:32:53 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:33:09 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 48ms (Views: 39.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:33:10 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.6ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:33:28 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 41ms (Views: 32.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:34:10 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:34:11 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:34:16 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.4ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:34:29 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:35:49 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 58ms (Views: 51.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:36:25 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (2.0ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 46ms (Views: 38.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:36:29 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 45ms (Views: 37.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:36:39 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 48ms (Views: 41.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:37:25 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:37:36 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 38ms (Views: 30.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:37:44 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:38:00 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:39:17 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:39:34 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 42ms (Views: 34.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:40:43 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.5ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:40:48 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 44ms (Views: 37.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:40:56 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 48ms (Views: 40.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:41:28 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:41:42 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.5ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:41:43 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.3ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:42:39 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.7ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 46ms (Views: 38.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:43:36 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.6ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:43:58 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.6ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:44:25 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.5ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 43ms (Views: 37.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:45:18 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.7ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:46:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (2.0ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 43ms (Views: 34.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:46:11 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (2.6ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 49ms (Views: 40.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:46:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 43ms (Views: 34.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:47:11 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.7ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 43ms (Views: 33.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:47:31 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.8ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:48:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.9ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 44ms (Views: 34.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:49:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 41ms (Views: 33.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:50:33 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (2.4ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 44ms (Views: 36.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:50:54 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (2.2ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:51:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.6ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 38ms (Views: 31.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:51:12 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (2.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 51ms (Views: 42.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:51:21 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.6ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 36ms (Views: 29.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:51:37 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 42ms (Views: 33.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:52:27 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:52:41 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 57ms (Views: 47.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:53:02 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:53:30 -0600
+Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (1.9ms)[0m  select * from countries right join country_datas on countries.name = country_datas.name
+Completed 200 OK in 43ms (Views: 33.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/countries" for ::1 at 2015-11-22 10:54:33 -0600
+Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.2ms)[0m  [1mselect * from countries right join country_datas on countries.name = country_datas.name[0m
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 1.2ms)
