@@ -12,7 +12,7 @@ ActiveRecord::Base.establish_connection(
   database: 'countries_pallete',
   host: 'localhost',
   port: '5432',
-  username: 'smeriwether',
+  username: 'jeffphan',
   password: ''
 )
 
@@ -36,8 +36,8 @@ two_char_code.zip(lattitude).zip(longitude).zip(name).each do |country|
   country = country.flatten
   c = Country.new
   c.two_char_code = country[0]
-  c.latitude = country[1]
-  c.longitude = country[2]
+  c.longitude = country[1]
+  c.latitude = country[2]
   c.name = country[3]
   c.save!
 end
