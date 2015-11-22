@@ -19,5 +19,14 @@ export default Ember.Component.extend({
       return "N/A";
     }
   }),
+
+  updateTwitter: Ember.computed('countryName', function() {
+    var name = this.get('countryName');
+    if (name) {
+      return name;
+    } else {
+      return "Country Not Found";
+    }
+  }),
 });
 

@@ -1,4 +1,4 @@
-{{#leaflet-map id="leaf-let" lat=lat lng=lng zoom=zoom minZoom=minZoom maxZoom=maxZoom worldCopyJump=true}}
+{{#leaflet-map id="leaf-let" lat=lat lng=lng zoom=zoom minZoom=minZoom maxZoom=maxZoom worldCopyJump=true register-as=leafletMap}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each country in countries}}
     {{#marker-layer location=country.location onClick='setSideBarInfo'}}{{/marker-layer}}
@@ -11,5 +11,3 @@
            lifeExpectancy=sideBarCountry.lifeExpectancy
            deathRate=sideBarCountry.dyingBetweenSixty
            capita=sideBarCountry.expenditureAsGdp}}
-
-

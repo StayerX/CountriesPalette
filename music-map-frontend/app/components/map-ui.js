@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import LeafLet from 'ember-leaflet/components/leaflet-map';
 
 export default Ember.Component.extend({
   countryManager: Ember.inject.service(),
@@ -27,15 +28,14 @@ export default Ember.Component.extend({
     },
 
     searchForCountry(data) {
-      debugger;
       var countryName = data.trim().toLowerCase();
       var countries = this.get('countryManager.countries').get('content');
       var _this = this;
       countries.forEach(function(country) {
         var cnt = country._data;
         if (cnt.name && cnt.name.trim().toLowerCase() === countryName) {
-          _this.set('lat', cnt.latitude);
-          _this.set('lng', cnt.longitude);
+          _this.set('lng', cnt.latitude);
+          _this.set('lat', cnt.longitude);
           _this.set('sideBarCountry', cnt);
         }
       });
