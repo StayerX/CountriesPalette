@@ -176,10 +176,10 @@ for( countryID in 1:dim(countries)[[1]]){
       #Need to store the multiple values separately
       temp[1,keysInfoClean[keyID]] <- valuesCombined
     }
-    temp$countries <- countries[countryID,]$name
+    temp$countries <- as.vector(countries[countryID,]$name)
     #result[result$coutries==countries[countryID,]$name,keysInfoClean[keyID]] <-valuesCombined
     
-    result[dim(result)[[1]]+1,names(temp)] <- temp
+    result[dim(result)[[1]]+1,names(temp)] <- temp[1,names(temp)]
   }
 }
 
