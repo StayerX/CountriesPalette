@@ -24,9 +24,9 @@ require(RPostgreSQL)
 # Parameters Setup
 ###
 # countries file # ToDo should replace with read from postgress in future
-file<-"/Users/smeriwether/Development/CountriesPallete/CountriesWith3AlphaCode.txt"
+file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3AlphaCode.txt"
 # DB
-Connection <- list(host="localhost", user="smeriwether", password="", dbname="countries_pallete",port="5432")
+Connection <- list(host="localhost", user= "postgres", password="fhu8jmn3", dbname="countries_pallete",port="5432")
 tableName<-"country_datas";
 #Fields to extract
 fields<-list(population="Total population",gni="Gross national income",life_expectancy="Life expectancy",dying_under_five="Probability of dying under",dying_between_sixty="Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
@@ -86,6 +86,7 @@ clearName<-function(name){
   name<-iconv(name, to='ASCII//TRANSLIT') 
   name<-str_replace_all(name, "@en", "")
   name<-str_replace_all(name, "[[:punct:]]", "")
+  return(name);
 }
 
 countries$name_cleaned <- unlist(lapply(countries$name,clearName))
@@ -103,7 +104,9 @@ for( country in countries$name_cleaned){
 
 
 # Music -------------------------------------------------------------------
-
+result <- data.frame(matrix(vector(),dim(countries)[1],0),
+                        stringsAsFactors=F)
+result$coutries<-countries$name
 for( countryID in 1:dim(countries)[[1]]){
   if(countries$matching_id[countryID]==0){next;}
   # create query statement
@@ -120,7 +123,7 @@ for( countryID in 1:dim(countries)[[1]]){
                 VALUES ?country {",df$country[countries$matching_id[countryID]],"}. 
                 } ORDER BY DESC(xsd:Integer(?pop))
                 LIMIT 100"  ,sep="")
-  cat(query)
+  #cat(query)
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
   qd <- SPARQL(endpoint,query)
   dfmusic <- qd$results
@@ -139,7 +142,7 @@ for( countryID in 1:dim(countries)[[1]]){
                   FILTER(!isLiteral(?value) || LANGMATCHES(LANG(?value), \"en\"))
                   }
                   #LIMIT 100"  ,sep="")
-    cat(query)
+    #cat(query)
     # Step 2 - Use SPARQL package to submit query and save results to a data frame
     qd <- SPARQL(endpoint,query)
     dfinfo <- qd$results
@@ -149,33 +152,16 @@ for( countryID in 1:dim(countries)[[1]]){
     keysInfoClean<-unlist(lapply(keysInfo,cleanURL))
     for(keyID in 1:length((keysInfo))){
       #needs cleanup
-      result[] <-toString(dfinfo$value[dfinfo$property==keysInfo[keyID]])
+      valuesCombined<-toString(dfinfo$value[dfinfo$property==keysInfo[keyID]])
+      if(keysInfoClean[keyID]=="name") valuesCombined<-clearName(valuesCombined)
+      result[result$coutries==countries[countryID,]$name,keysInfoClean[keyID]] <-valuesCombined
     }
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-#}
-#df[df$code==code,names(fields)]<-extracted_vals
-#}else{
-#  # Do Nothing
-#}
-#}
-
-## Remove old Data Table
-#if(dbExistsTable(con,tableName)) {dbRemoveTable(con,tableName)}
-## Finally write a new table:
-#dbWriteTable(con,tableName, df)
+# Remove old Data Table
+if(dbExistsTable(con,tableName)) {dbRemoveTable(con,tableName)}
+# Finally write a new table:
+dbWriteTable(con,tableName, result)
 
 
