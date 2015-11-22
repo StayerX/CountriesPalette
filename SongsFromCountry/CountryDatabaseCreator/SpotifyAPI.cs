@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,9 +15,18 @@ namespace CountryDatabaseCreator
             
             using (var httpClient = new HttpClient())
             {
-                String json = new WebClient().DownloadString(String.Format("https://api.spotify.com/v1/search?q={0}&type=artist",artistName));
-                var ID = parseJson(json, "id");
-                return ID[0];
+                try
+                {
+                    String json = new WebClient().DownloadString(String.Format("https://api.spotify.com/v1/search?q={0}&type=artist", artistName));
+                    var ID = parseJson(json, "id");
+                    return ID[0];
+                }
+                catch (Exception)
+                {
+
+                    return "";
+                }
+                
                 
                 
             }
@@ -28,18 +35,32 @@ namespace CountryDatabaseCreator
         public static List<String> getArtistsTopSongsByCountry(String artistID, String country)
         {
             //country must be alpha2String
-            String json = new WebClient().DownloadString(String.Format("https://api.spotify.com/v1/artists/{0}/top-tracks?country={1}", artistID, country));
-            var songs = parseJson(json, "name");
-            var types = parseJson(json, "type");
-            List<String> finalSongs = new List<string>();
-            for (int i = 0; i < types.Count; i++)
+            if (artistID != "")
             {
-                if(types[i] == "track")
+                try
                 {
-                    finalSongs.Add(songs[i]);
+
+                    String json = new WebClient().DownloadString(String.Format("https://api.spotify.com/v1/artists/{0}/top-tracks?country={1}", artistID, country));
+                    var songs = parseJson(json, "name");
+                    var types = parseJson(json, "type");
+                    List<String> finalSongs = new List<string>();
+                    for (int i = 0; i < types.Count; i++)
+                    {
+                        if (types[i] == "track")
+                        {
+                            finalSongs.Add(songs[i]);
+                        }
+                    }
+                    return finalSongs;
+                }
+                
+                catch (Exception)
+                {
+
+                    return new List<String>();
                 }
             }
-            return finalSongs;
+            return new List<String>();
         }
 
         public static List<int> AllIndexesOf(string str, string value)

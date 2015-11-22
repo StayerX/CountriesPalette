@@ -11,7 +11,7 @@ namespace CountryDatabaseCreator
         static void Main(string[] args)
         {
 
-            var y = SpotifyAPI.getArtistsTopSongsByCountry(SpotifyAPI.getArtistID("Justin Bieber"), "US");
+             //exmaple var y = SpotifyAPI.getArtistsTopSongsByCountry(SpotifyAPI.getArtistID("Justin Bieber"), "US");
         }
     }
 }

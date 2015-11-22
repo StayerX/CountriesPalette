@@ -6,3 +6,9 @@ c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\Count
 c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.pdb
 c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\Newtonsoft.Json.dll
 c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\Newtonsoft.Json.xml
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.exe.config
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.exe
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.pdb
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.exe
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.pdb
+C:\CountriesPallete\SongsFromCountry\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.csprojResolveAssemblyReference.cache
