@@ -15,7 +15,7 @@ file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3Alpha
 Connection <- list(host="localhost", user= "postgres", password="fhu8jmn3", dbname="countries_pallete",port="5432")
 tableName<-"countries";
 #Fields to extract
-fields<-list(population="Total population",life_expectancy="Gross national income",gying_under_five="Life expectancy",dying_between_sixty="Probability of dying under","Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
+fields<-list(population="Total population",gni="Gross national income",life_expectancy="Life expectancy",gying_under_five="Probability of dying under",dying_between_sixty="Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
 ###
 # Code
 ###
@@ -52,38 +52,37 @@ countries<-read.csv(file,sep="\t",header=FALSE)
 dimnames(countries)[[2]]<-list("code","name")
 
 cleanFun <- function(htmlString) {
-  return(gsub("<.*?>", "", htmlString))
+  return(gsub(" *<.*?> *", "", htmlString))
 }
-
-
-mypattern <- '^ *(?:<.*?>)+?([^<]+)(?:<.*?>)+'
-getexpr <- function(s,g)substring(s,g,g+attr(g,'match.length')-1)
-
-
-
+countries<-na.omit(countries)
+# Create Empty DF
 df <- data.frame(matrix(vector(),dim(countries)[1],length(fields)+2),
                 stringsAsFactors=F)
 dimnames(df)[[2]]<-c(names(countries),names(fields))
-
-
+df[,1:2]<-countries
+# Get Data
 for (code in countries$code){
   url<-paste("http://www.who.int/countries/",tolower(code),"/en/" ,sep="")
   validPage<-TRUE
   tryCatch(thepage <- readLines(url),  error = function(e) validPage<-FALSE , finally = print("Hello"))
   extracted_vals<-list()
   if(validPage){
+    extracted_vals<-NULL
     for (query in names(fields)){
-      
       datalines<-thepage[grep(fields[query],thepage)+1]
-      print(paste(query," : ",cleanFun(datalines)))
-      extracted_vals[query] <- 
+      #print(paste(query," : ",cleanFun(datalines)))
+      if(suppressWarnings(!is.na(as.numeric(cleanFun(val<-gsub(",", "",datalines)))))){
+        extracted_vals[query] <-  as.numeric(cleanFun(val))
+      }else{
+        extracted_vals[query] <-  cleanFun(datalines)
+      }
     }
-    df[df$code==code,]<-extracted_vals<-NULL
+    df[df$code==code,names(fields)]<-extracted_vals
   }else{
     # Do Nothing
   }
 }
-
+# Remove old Data Table
 if(dbExistsTable(con,tableName)) {dbRemoveTable(con,tableName)}
 # Finally write a new table:
-dbWriteTable(con,tableName, x)
+dbWriteTable(con,tableName, df)
