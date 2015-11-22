@@ -36,6 +36,45 @@ cat(query)
 
 
 
+# Capital by coutry # working
+SELECT DISTINCT *
+              WHERE {
+              ?band <>;
+              ?city rdf:type dbo:City ; 
+              rdfs:label ?label ; 
+              dbo:country ?country .
+              ?city rdf:type dbo:capital.
+              }
+
+
+select ?country, ?capital, ?largestCity, ?pop, ?band
+where {
+  ?country rdf:type umbel-rc:Country.
+  ?country dbp:capital ?capital.
+  ?country dbp:largestCity ?largestCity.
+  ?country dbp:populationCensus  ?pop.
+  MINUS { ?country dbp:yearEnd ?end }.
+  ?band rdf:type <http://schema.org/MusicGroup>.
+  ?band dbo:hometown ?capital.
+  VALUES ?band {<http://dbpedia.org/page/Noah_and_the_Whale>}. 
+} ORDER BY DESC(xsd:Integer(?pop))
+LIMIT 100
+
+
+
+select ?country, ?capital, ?largestCity, ?pop, ?band
+where {
+  ?country rdf:type umbel-rc:Country.
+  ?country dbp:capital ?capital.
+  ?country dbp:largestCity ?largestCity.
+  ?country dbp:populationCensus  ?pop.
+  MINUS { ?country dbp:yearEnd ?end }.
+  ?band rdf:type <http://schema.org/MusicGroup>.
+  ?band dbo:hometown ?capital.
+  VALUES ?country {<http://dbpedia.org/resource/Aruba>}. 
+  } ORDER BY DESC(xsd:Integer(?pop))
+  LIMIT 100
+  
 
 
 
@@ -49,6 +88,7 @@ where {
   MINUS { ?country dbp:yearEnd ?end }.
   ?band rdf:type <http://schema.org/MusicGroup>.
   ?band dbo:hometown ?capital.
+  VALUES ?country {",df$country[countries$matching_id[countryID]],". 
 } ORDER BY DESC(xsd:Integer(?pop))
 LIMIT 100
 

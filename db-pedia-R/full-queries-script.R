@@ -108,16 +108,25 @@ for( countryID in 1:dim(countries)[[1]]){
   if(countries$matching_id[countryID]==0){next;}
   # create query statement
   query <-paste("
-  select ?country, ?capital, ?band
-  where {
-          ?capital rdf:type umbel-rc:Country.
-          ?country dbp:populationCensus  ?pop.
-          ?band rdf:type <http://schema.org/MusicGroup>.
-          VALUES ?country {",df$country[countries$matching_id[countryID]],". 
-  } ORDER BY DESC(xsd:Integer(?pop))
-  LIMIT 100",sep="")
+select ?country, ?capital, ?largestCity, ?pop, ?band
+where {
+                ?country rdf:type umbel-rc:Country.
+                ?country dbp:capital ?capital.
+                ?country dbp:largestCity ?largestCity.
+                ?country dbp:populationCensus  ?pop.
+                MINUS { ?country dbp:yearEnd ?end }.
+                ?band rdf:type <http://schema.org/MusicGroup>.
+                ?band dbo:hometown ?capital.
+                VALUES ?country {",df$country[countries$matching_id[countryID]],"}. 
+} ORDER BY DESC(xsd:Integer(?pop))
+                LIMIT 100"  ,sep="")
+  cat(query)
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
   qd <- SPARQL(endpoint,query)
-  df <- qd$results
+  dfmusic <- qd$results
+  if(length(dfmusic)==0){next;}
+  
+  
+  
 }
 
