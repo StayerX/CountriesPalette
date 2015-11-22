@@ -111,7 +111,7 @@ for( country in countries$name_cleaned){
 # Music -------------------------------------------------------------------
 
 finalQuery<-"dbo:abstract dbo:genre dbp:name dbp:currentMembers dbp:website dbo:associatedBand dbo:hometown"
-result <- data.frame(matrix(vector(),1,1+length(strsplit(finalQuery, split=" ")[[1]])),
+result <- data.frame(matrix(vector(),0,1+length(strsplit(finalQuery, split=" ")[[1]])),
                      stringsAsFactors=F)
 dimnames(result)[[2]]<-unlist(c("countries",strsplit(gsub("db.:", "", finalQuery), split=" ")))
 #result$coutries<-countries$name
