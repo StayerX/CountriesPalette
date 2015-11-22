@@ -11,6 +11,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, models) {
     this.get('countryManager').setAllCountries(models[0]);
+    this.get('countryManager').setUnitedStates();
   },
 
   actions: {
