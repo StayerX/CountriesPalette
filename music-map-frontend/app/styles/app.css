@@ -8,7 +8,7 @@ html {
   margin: 0px;
   padding: 0px;
   font-family: arial;
-  background: rgba(205, 210, 212, 1.0);
+  background: rgba(221, 221, 221, 1.0);
 }
 
 .ember-view {
@@ -20,8 +20,35 @@ html {
   height: 99%;
 }
 
+.search-bar {
+  padding: 10px;
+  top: 50px;
+  left: 75px;
+  height: 2%;
+  width: 30%;
+  background-color: #ffffff;
+  visibility: visible;
+  position: absolute;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+  outline: none;
+  outline-width: 0;
+  font-size: 20px;
+}
+
 .side-bar {
-  height: 200px;
+  padding: 10px;
+  top: 50px;
+  right: 75px;
+  height: 80%;
+  width: 20%;
+  background-color: #ffffff;
+  visibility: visible;
+  position: absolute;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+  box-shadow: 10px 10px 15px #888888;
 }
 
 .leaflet-popup-content-wrapper,
@@ -36,29 +63,19 @@ html {
   z-index: 1;
 }
 
-.side-bar {
-  padding: 10px;
-  top: 50px;
-  right: 75px;
-  height: 80%;
-  width: 20%;
-  background-color: #ffffff;
-  visibility: visible;
-  position: absolute;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.6);
-}
-
 .country-info,
 .twitter-info,
 .music-info {
-  padding-top: 20px;
-  height: 27%;
+  padding-top: 10px;
+  height: 19%;
 }
 
-.country-info,
-.twitter-info {
-  border-bottom: 1px solid;
+.twitter-component {
+  vertical-align: bottom;
+  position: absolute;
+  text: center;
+  bottom: 0px;
+  width: 95%;
 }
 
 .country {
@@ -70,10 +87,24 @@ html {
 
 .population {
   padding-left: 30px;
+  padding-bottom: 5px;
   font-size:  15px;
 }
 
 .music {
   padding-left: 30px;
   font-size:  15px;
+}
+
+@media only screen and (max-height: 810px) {
+  .twitter-info,
+  .twitter-timeline {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  .side-bar {
+    display: none !important;
+  }
 }
