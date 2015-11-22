@@ -10,12 +10,12 @@ require(RPostgreSQL)
 # Parameters Setup
 ###
 # countries file # ToDo should replace with read from postgress in future
-file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3AlphaCode.txt"
+file<-"/Users/smeriwether/Development/CountriesPallete/CountriesWith3AlphaCode.txt"
 # DB
-Connection <- list(host="localhost", user= "postgres", password="fhu8jmn3", dbname="countries_pallete",port="5432")
-tableName<-"countries";
+Connection <- list(host="localhost", user="smeriwether", password="", dbname="countries_pallete",port="5432")
+tableName<-"country_datas";
 #Fields to extract
-fields<-list(population="Total population",gni="Gross national income",life_expectancy="Life expectancy",gying_under_five="Probability of dying under",dying_between_sixty="Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
+fields<-list(population="Total population",gni="Gross national income",life_expectancy="Life expectancy",dying_under_five="Probability of dying under",dying_between_sixty="Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
 ###
 # Code
 ###
@@ -25,7 +25,7 @@ CheckDatabase <- function(Connection) {
           sqldf.RPostgreSQL.dbname    = Connection$dbname,
           sqldf.RPostgreSQL.host      = Connection$host, 
           sqldf.RPostgreSQL.port      = Connection$port)
-  
+
   out <- tryCatch(
     {
       sqldf("select TRUE;")
@@ -33,7 +33,7 @@ CheckDatabase <- function(Connection) {
     error=function(cond) {
       out <- FALSE
     }
-  )    
+  )
   return(out)
 }
 
@@ -64,7 +64,7 @@ df[,1:2]<-countries
 for (code in countries$code){
   url<-paste("http://www.who.int/countries/",tolower(code),"/en/" ,sep="")
   validPage<-TRUE
-  tryCatch(thepage <- readLines(url),  error = function(e) validPage<-FALSE , finally = print("Hello"))
+  tryCatch(thepage <- readLines(url),  error = function(e) validPage<<-FALSE , finally = print("Hello"))
   extracted_vals<-list()
   if(validPage){
     extracted_vals<-NULL
