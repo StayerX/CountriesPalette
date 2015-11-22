@@ -1,7 +1,9 @@
 {{#leaflet-map lat=lat lng=lng zoom=zoom}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-  {{#marker-layer location=emberConfLocation}}{{/marker-layer}}
+  {{#each country in countries}}
+    {{#marker-layer location=country.location onClick='setSideBarInfo'}}{{/marker-layer}}
+  {{/each}}
 {{/leaflet-map}}
 
-{{side-bar country="United States of America" population=100000000}}
+{{side-bar country=sideBarCountry population=100000000}}
 
