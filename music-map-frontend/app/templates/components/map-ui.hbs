@@ -1,10 +1,15 @@
-{{#leaflet-map lat=lat lng=lng zoom=zoom}}
+{{#leaflet-map id="leaf-let" lat=lat lng=lng zoom=zoom minZoom=minZoom maxZoom=maxZoom worldCopyJump=true}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each country in countries}}
     {{#marker-layer location=country.location onClick='setSideBarInfo'}}{{/marker-layer}}
   {{/each}}
 {{/leaflet-map}}
 
-{{side-bar countryName=sideBarCountry.name population=sideBarCountry.population artist="Bob Joe" song="Random Song" expectancy=80 deathrate=0.5 capita=55860}}
+{{input placeholder="Type to search a county" value=searchText class="search-bar" enter="searchForCountry"}}
+{{side-bar countryName=sideBarCountry.name
+           population=sideBarCountry.population
+           lifeExpectancy=sideBarCountry.lifeExpectancy
+           deathRate=sideBarCountry.dyingBetweenSixty
+           capita=sideBarCountry.expenditureAsGdp}}
 
 
