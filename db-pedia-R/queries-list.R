@@ -39,10 +39,14 @@ cat(query)
 
 
 
-select ?country, ?capital, ?band
+
+select ?country, ?capital, ?largestCity, ?pop, ?band
 where {
-  ?capital rdf:type umbel-rc:Country.
+  ?country rdf:type umbel-rc:Country.
+  ?country dbp:capital ?capital.
+  ?country dbp:largestCity ?largestCity.
   ?country dbp:populationCensus  ?pop.
+  MINUS { ?country dbp:yearEnd ?end }.
   ?band rdf:type <http://schema.org/MusicGroup>.
   ?band dbo:hometown ?capital.
 } ORDER BY DESC(xsd:Integer(?pop))
