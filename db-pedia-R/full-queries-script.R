@@ -125,7 +125,11 @@ for( countryID in 1:dim(countries)[[1]]){
                 LIMIT 100"  ,sep="")
   #cat(query)
   # Step 2 - Use SPARQL package to submit query and save results to a data frame
-  qd <- SPARQL(endpoint,query)
+  
+  validQuery<-TRUE
+  tryCatch(qd <- SPARQL(endpoint,query), warning = function(w) {validQuery<<-FALSE},  error = function(e) {validQuery<<-FALSE} , finally = NULL)
+  
+  if(!validQuery){next;}
   dfmusic <- qd$results
   if(length(dfmusic)==0){next;}
   
