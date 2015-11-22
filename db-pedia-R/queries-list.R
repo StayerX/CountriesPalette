@@ -39,7 +39,7 @@ cat(query)
 # Capital by coutry # working
 SELECT DISTINCT *
               WHERE {
-              ?band <>;
+              ?band <http://dbpedia.org/page/Noah_and_the_Whale>;
               ?city rdf:type dbo:City ; 
               rdfs:label ?label ; 
               dbo:country ?country .
