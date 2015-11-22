@@ -20,10 +20,10 @@ fields<-list(population="Total population",gni="Gross national income",life_expe
 # Code
 ###
 CheckDatabase <- function(Connection) {
-  options(sqldf.RPostgreSQL.user      = Connection$user, 
+  options(sqldf.RPostgreSQL.user      = Connection$user,
           sqldf.RPostgreSQL.password  = Connection$password,
           sqldf.RPostgreSQL.dbname    = Connection$dbname,
-          sqldf.RPostgreSQL.host      = Connection$host, 
+          sqldf.RPostgreSQL.host      = Connection$host,
           sqldf.RPostgreSQL.port      = Connection$port)
 
   out <- tryCatch(
@@ -64,7 +64,7 @@ df[,1:2]<-countries
 for (code in countries$code){
   url<-paste("http://www.who.int/countries/",tolower(code),"/en/" ,sep="")
   validPage<-TRUE
-  tryCatch(thepage <- readLines(url),  error = function(e) validPage<<-FALSE , finally = print("Hello"))
+  tryCatch(thepage <- readLines(url), warning = function(w) {validPage<<-FALSE},  error = function(e) {validPage<<-FALSE} , finally = NULL)
   extracted_vals<-list()
   if(validPage){
     extracted_vals<-NULL
@@ -82,6 +82,7 @@ for (code in countries$code){
     # Do Nothing
   }
 }
+
 # Remove old Data Table
 if(dbExistsTable(con,tableName)) {dbRemoveTable(con,tableName)}
 # Finally write a new table:
