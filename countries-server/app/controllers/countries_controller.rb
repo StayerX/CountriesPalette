@@ -1,0 +1,14 @@
+class CountriesController < ApplicationController
+  respond_to :json
+
+  def index
+    @countries = Country.all
+    render json: @countries, each_serializer: CountrySerializer
+  end
+
+  private
+
+  def country_params
+    params.require(:country).permit(:longitude, :latitude)
+  end
+end

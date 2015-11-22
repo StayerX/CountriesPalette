@@ -14,6 +14,7 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'img-src': "'self' http://c.basemaps.cartocdn.com http://b.basemaps.cartocdn.com http://a.basemaps.cartocdn.com",
+      'connect-src': "'self' http://localhost:3000/countries"
     },
 
     APP: {
