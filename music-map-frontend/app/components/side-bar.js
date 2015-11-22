@@ -29,8 +29,7 @@ export default Ember.Component.extend({
     			fjs.parentNode.insertBefore(js,fjs);}
     	}(document,"script","twitter-wjs");
 
-
-     	var first = "<div id='twitter'><a class='twitter-timeline' href='https://twitter.com/search?q=%23{{countryName}}' data-widget-id='668277065687265280' data-screen-name="
+     	var first = "<div id='twitter' class='twitter-comp'><a class='twitter-timeline' href='https://twitter.com/search?q=%23{{countryName}}' data-widget-id='668277065687265280' data-screen-name="
      	var last = "data-chrome='transparent'height='400'>Tweets from {{countryName}}</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script></div>"
 			var combined = first + this.get('countryName') + last;
 

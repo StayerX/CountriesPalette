@@ -70,7 +70,7 @@ html {
   height: 19%;
 }
 
-.twitter-component {
+.twitter-comp {
   vertical-align: bottom;
   position: absolute;
   text: center;
@@ -88,11 +88,6 @@ html {
 .population {
   padding-left: 30px;
   padding-bottom: 5px;
-  font-size:  15px;
-}
-
-.music {
-  padding-left: 30px;
   font-size:  15px;
 }
 
