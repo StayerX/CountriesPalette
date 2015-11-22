@@ -5,5 +5,7 @@ class CountrySerializer < ActiveModel::Serializer
              :latitude,
              :two_char_code,
              :code,
-             :population
+             :population,
+             :life_expectancy,
+             :expenditure_as_gdp
 end
