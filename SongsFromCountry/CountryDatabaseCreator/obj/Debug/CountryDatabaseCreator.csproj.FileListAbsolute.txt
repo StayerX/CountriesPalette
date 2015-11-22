@@ -1,0 +1,8 @@
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.exe.config
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.exe
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\CountryDatabaseCreator.pdb
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.csprojResolveAssemblyReference.cache
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.exe
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\obj\Debug\CountryDatabaseCreator.pdb
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\Newtonsoft.Json.dll
+c:\users\paul\documents\visual studio 2013\Projects\CountryDatabaseCreator\CountryDatabaseCreator\bin\Debug\Newtonsoft.Json.xml
