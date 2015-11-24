@@ -8,7 +8,6 @@ export default DS.Model.extend({
   twoCharCode: DS.attr('string'),
   code: DS.attr('string'),
   population: DS.attr('number'),
-  lifeExpectancy: DS.attr('number'),
-  dyingBetweenSixty: DS.attr('number'),
-  expenditureAsGdp: DS.attr('number'),
+  customLife: DS.attr('number'),
+  expenditureAsGdp: DS.attr('number')
 });

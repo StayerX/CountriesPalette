@@ -7,9 +7,9 @@ endpoint <- "http://dbpedia.org/sparql"
 # Coutries ----------------------------------------------------------------
 
 # countries file # ToDo should replace with read from postgress in future
-file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3AlphaCode.txt"
+file<-"/Users/smeriwether/Development/CountriesPallete/CountriesWith3AlphaCode.txt"
 # countries file # ToDo should replace with read from postgress in future
-fileCoutriesDB<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesQuery.csv"
+fileCoutriesDB<-"/Users/smeriwether/Development/CountriesPallete/CountriesQuery.csv"
 # DB
 countries<-read.csv(file,sep="\t",header=FALSE)
 dimnames(countries)[[2]]<-list("code","name")
@@ -24,10 +24,10 @@ require(RPostgreSQL)
 # Parameters Setup
 ###
 # countries file # ToDo should replace with read from postgress in future
-file<-"C:\\Users\\CBLadmin\\Dropbox\\repo\\CountriesPallete\\CountriesWith3AlphaCode.txt"
+file<-"/Users/smeriwether/Development/CountriesPallete/CountriesWith3AlphaCode.txt"
 # DB
-Connection <- list(host="localhost", user= "postgres", password="fhu8jmn3", dbname="countries_pallete",port="5432")
-tableName<-"country_datas";
+Connection <- list(host="localhost", user= "smeriwether", password="", dbname="countries_pallete",port="5432")
+tableName<-"country_database";
 #Fields to extract
 fields<-list(population="Total population",gni="Gross national income",life_expectancy="Life expectancy",dying_under_five="Probability of dying under",dying_between_sixty="Probability of dying between",expenditure_per_capita="Total expenditure on health per capita",expenditure_as_gdp="Total expenditure on health as % of GDP")
 ###
@@ -100,6 +100,12 @@ countries$matching_id <- vector(mode = "logical",length=length(countries$name_cl
 for( country in countries$name_cleaned){
   id<-grep(country, df$country_name_cleared)
   if(length(id)>0){
+    print(countries$name_cleaned)
+    countries$name_cleaned[is.na(countries$name_cleaned)] <- ""
+    print(country)
+    if (is.na(country)) {
+      next;
+    }
     countries[countries$name_cleaned==country,]$matching_id<-id[1]
   }else{
     # warning(country)

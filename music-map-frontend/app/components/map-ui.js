@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   searchText: null,
   map: null,
 
-  init() {
+  didInsertElement() {
     var map = L.map('leaflet', { center: [this.get('lat'), this.get('lng')],
       zoom: this.get('zoom')
     });
